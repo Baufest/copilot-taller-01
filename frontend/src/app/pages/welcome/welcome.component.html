@@ -1,0 +1,96 @@
+<div class="welcome-page">
+  <!-- Ambient background -->
+  <div class="bg-ambient">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+  </div>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__brand">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="#0F172A"/>
+          <path d="M8 20V8h4l4 8 4-8h4v12h-3v-7.5L17.5 20h-3L11 12.5V20H8z" fill="#E0E7FF"/>
+        </svg>
+        <span>Compliance Platform</span>
+      </div>
+      <button class="btn-logout" (click)="logout()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M6 14H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3M10 11l3-3-3-3M13 8H6" stroke="#64748B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Cerrar sesión
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+    <!-- Hero section -->
+    <div class="hero-shell">
+      <div class="hero">
+        <div class="hero__badge">
+          <span class="badge-dot"></span>
+          Sesión activa
+        </div>
+
+        <h1 class="hero__title">
+          Bienvenido,<br/>
+          <span class="hero__name">{{ username() }}</span>
+        </h1>
+
+        <p class="hero__description">
+          Has iniciado sesión exitosamente en la Compliance Platform.
+          Tu sesión está activa y segura.
+        </p>
+
+        <div class="hero__actions">
+          <button class="btn-secondary" (click)="logout()">
+            Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info cards grid -->
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="info-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2zm0 4v4l3 1.5" stroke="#0F172A" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="info-card__content">
+          <h3 class="info-card__title">Sesión activa</h3>
+          <p class="info-card__text">Token JWT almacenado en sessionStorage. La sesión expira al cerrar el navegador.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="8" width="14" height="10" rx="2" stroke="#0F172A" stroke-width="1.4"/>
+            <path d="M7 8V6a3 3 0 0 1 6 0v2" stroke="#0F172A" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="info-card__content">
+          <h3 class="info-card__title">Acceso autenticado</h3>
+          <p class="info-card__text">Esta página está protegida por un guard de Angular Router. Solo usuarios autenticados pueden acceder.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 3L3 7v6l7 4 7-4V7l-7-4z" stroke="#0F172A" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M3 7l7 4m0 0l7-4m-7 4v6" stroke="#0F172A" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="info-card__content">
+          <h3 class="info-card__title">Backend conectado</h3>
+          <p class="info-card__text">Autenticado vía API FastAPI con JWT. Las credenciales se validan de forma segura en el servidor.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
